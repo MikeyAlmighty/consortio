@@ -1,6 +1,6 @@
 export const sideBarData = [
-  { label: 'Burger', alt: 'burger-icon', src: '/assets/burger-icon.svg', href: '/' },
-  { label: 'Dashboard', alt: 'dashboard-icon', src: '/assets/dashboard-icon.svg', href: '/' },
-  { label: 'Devices', alt: 'contracts-icon', src: '/assets/contracts-icon.svg', href: '/devices' },
-  { label: 'Groups', alt: 'group-icon', src: '/assets/group-icon.svg', href: '/home' },
+  { label: 'Brands', alt: 'brands-icon', src: '/assets/brands-icon.svg', href: '/brands' },
+  { label: 'Influencers', alt: 'influencer-icon', src: '/assets/influencer-icon.svg', href: '/influencer' },
+  { label: 'Products', alt: 'product-icon', src: '/assets/product-icon.svg', href: '/product' },
+  { label: 'Contracts', alt: 'contracts-icon', src: '/assets/contracts-icon.svg', href: '/contract' }
 ]

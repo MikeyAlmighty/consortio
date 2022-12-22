@@ -1,20 +1,21 @@
-import TopBar from '@components/top-bar'
+import { ReactNode } from 'react'
+
 import SideBar from '@components/side-bar/index'
 import styles from '../../styles/Home.module.css'
 
-const Layout = ({ children }) => {
-    return (
-        <>
-            <div>
-            <TopBar />
-            </div>
-            <SideBar />
-            <main className={styles.main}>
-                {children}
-            </main>
+type LayoutProps = {
+  children: ReactNode
+}
 
-        </>
-    )
+const Layout = ({ children }: LayoutProps) => {
+  return (
+    <>
+      <SideBar />
+      <main className={styles.main}>
+        {children}
+      </main>
+    </>
+  )
 }
 
 export default Layout
