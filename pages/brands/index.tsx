@@ -33,7 +33,7 @@ const BrandPage = ({ data }: BrandPageProps) => {
 }
 
 export async function getServerSideProps () {
-  const res = await fetch('http://collision-api-production.up.railway.app/brands')
+  const res = await fetch('https://localhost:8000')
     .then((response) => response.json())
     .catch((error) => {
       console.error('Error:', error);

@@ -11,7 +11,7 @@ const BrandAdd = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<Brand>()
   const onSubmit: SubmitHandler<Brand> = data => {
 
-    fetch('https://collision-api-production.up.railway.app/brands', {
+    fetch('https://consortio-api-production.up.railway.app/brands', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
