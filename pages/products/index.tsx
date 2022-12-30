@@ -2,38 +2,38 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 /* import { useEffect, useState } from 'react' */
 
-import BrandTable from '@components/table/brand-table'
+import ProductTable from '@components/table/product-table'
 import AddButton from '@components/buttons/add-button'
 
-import { Brand } from '@models/brand'
+import { Product } from '@models/product'
 
-type BrandPageProps = {
-  data: Brand[]
+type ProductPageProps = {
+  data: Product[]
 }
 
-const BrandPage = ({ data }: BrandPageProps) => {
-  /* const [brandData, setBrandData] = useState([]) */
+const ProductPage = ({ data }: ProductPageProps) => {
+  /* const [productData, setProductData] = useState([]) */
 
   const router = useRouter()
 
-  const handleBrandClick = (id: string) => {
-    router.push(`/brands/${id}/edit`)
+  const handleProductClick = (id: string) => {
+    router.push(`/products/${id}/edit`)
   }
 
   return (
     <>
-      <Link href='/brands/add'>
+      <Link href='/products/add'>
         <AddButton />
       </Link>
       <div className='border border-lime-500 w-8/12 border-2'>
-        <BrandTable handleRowClick={handleBrandClick} defaultData={data} />
+        <ProductTable handleRowClick={handleProductClick} defaultData={data} />
       </div>
     </>
   )
 }
 
 export async function getServerSideProps () {
-  const res = await fetch('http://localhost:8000')
+  const res = await fetch('http://localhost:8000/products')
     .then((response) => response.json())
     .catch((error) => {
       console.error('Error:', error);
@@ -41,4 +41,4 @@ export async function getServerSideProps () {
   return { props: { data: res } }
 }
 
-export default BrandPage
+export default ProductPage

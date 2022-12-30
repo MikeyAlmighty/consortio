@@ -17,19 +17,21 @@ const BrandTable = ({ defaultData, handleRowClick }: BrandTableProps) => {
     columnHelper.accessor('name', {
       cell: info => info.getValue(),
       header: () => <span>Company</span>,
-      footer: props => props.column.id
+      // footer: props => props.column.id
     }),
     columnHelper.accessor(({ origin }) => origin, {
       id: 'origin',
       cell: info => info.getValue(),
       header: () => <span>Origin</span>,
-      footer: props => props.column.id
+      // footer: props => props.column.id
     }),
-    columnHelper.accessor(({ inceptionDate }) => inceptionDate, {
-      id: 'inceptionDate',
-      cell: info => info.getValue(),
-      header: () => <span>Company Started</span>,
-      footer: props => props.column.id
+    columnHelper.accessor(({ incorporationDate }) => incorporationDate, {
+      id: 'incorporationDate',
+      cell: ( { row } ) => {
+        return row.original.incorporationDate
+      },
+      header: () => <span>Date of Incorporation</span>,
+      // footer: props => props.column.id
     })
   ]
   return (
