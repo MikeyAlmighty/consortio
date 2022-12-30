@@ -11,3 +11,10 @@
 ### Languages/Frameworks
 
 - [Next.js](https://nextjs.org/)
+
+## Setup and Running
+
+### Setup:
+
+Installation: `npm i`
+Running: `npm run dev`
