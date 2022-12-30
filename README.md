@@ -16,5 +16,5 @@
 
 ### Setup:
 
-Installation: `npm i`
-Running: `npm run dev`
+- Installation: `npm i`
+- Running: `npm run dev`
