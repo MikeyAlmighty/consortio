@@ -11,5 +11,6 @@ export type Brand = {
   id: String
   origin: String
   active: Boolean
+  incorporationDate: Date
   IPR: IPR
 }

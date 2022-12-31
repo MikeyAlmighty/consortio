@@ -1,9 +1,12 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-/* import { useEffect, useState } from 'react' */
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 import BrandTable from '@components/table/brand-table'
 import AddButton from '@components/buttons/add-button'
+import { toasty } from '@utils/toast'
 
 import { Brand } from '@models/brand'
 
@@ -12,8 +15,6 @@ type BrandPageProps = {
 }
 
 const BrandPage = ({ data }: BrandPageProps) => {
-  /* const [brandData, setBrandData] = useState([]) */
-
   const router = useRouter()
 
   const handleBrandClick = (id: string) => {
@@ -25,6 +26,7 @@ const BrandPage = ({ data }: BrandPageProps) => {
       <Link href='/brands/add'>
         <AddButton />
       </Link>
+      <ToastContainer />
       <div className='border border-lime-500 w-8/12 border-2'>
         <BrandTable handleRowClick={handleBrandClick} defaultData={data} />
       </div>
@@ -36,7 +38,8 @@ export async function getServerSideProps () {
   const res = await fetch('http://localhost:8000')
     .then((response) => response.json())
     .catch((error) => {
-      console.error('Error:', error);
+      console.error('[Brands index] - Error: ', error)
+      // throw new Error('[Brands index] - Error: ', error)
     })
   return { props: { data: res } }
 }

@@ -1,10 +1,8 @@
-const SubmitButton = () => {
-  return (
-    <input
-      className='border border-gray-500 bg-lime-300 m-4 cursor-pointer'
-      type='submit'
-    />
-  )
-}
+const SubmitButton = () => (
+  <input
+    className='border text-gray-700 border-lime-500 rounded bg-lime-100 m-4 cursor-pointer hover:bg-lime-500 w-48'
+    type='submit'
+  />
+)
 
 export default SubmitButton

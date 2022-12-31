@@ -2,8 +2,12 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 /* import { useRouter } from 'next/router' */
 import { Brand } from '@models/brand'
 
-const BrandAdd = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<Brand>()
+const BrandEdit = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm<Brand>()
   const onSubmit: SubmitHandler<Brand> = data => console.info(data)
 
   /* const router = useRouter() */
@@ -18,4 +22,4 @@ const BrandAdd = () => {
   )
 }
 
-export default BrandAdd
+export default BrandEdit
