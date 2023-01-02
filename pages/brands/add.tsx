@@ -5,9 +5,7 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 import BrandForm from '@components/forms/brand-form'
-
 import { toasty } from '@utils/toast'
-
 import { Brand, IPR } from '@models/brand'
 
 const BrandAdd = () => {
@@ -46,7 +44,6 @@ const BrandAdd = () => {
         console.error('Error:', error)
         setIsLoading(false)
       })
-
     router.push('/brands')
   }
 
@@ -54,6 +51,7 @@ const BrandAdd = () => {
     <BrandForm
       register={register}
       handleSubmit={handleSubmit(handleBrandAdd)}
+      handleBack={router.back}
       errors={errors}
       isLoading={isLoading}
       control={control}

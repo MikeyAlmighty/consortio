@@ -2,7 +2,7 @@ import { toast } from 'react-toastify';
 
 type ToastProps = {
   message: string
-  isError: boolean
+  isError?: boolean
 }
 
 export const toasty = ({ message, isError = false }: ToastProps) => (

@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const AddButton = () => (
   <Image
-    className='cursor-pointer'
+    className='cursor-pointer hover:bg-gray-300 hover:rounded-full'
     alt='plus-add-icon'
     width={40}
     height={40}

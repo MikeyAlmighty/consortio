@@ -1,7 +1,6 @@
 import { ReactNode } from 'react'
 
 import SideBar from '@components/side-bar/index'
-import styles from '../../styles/Home.module.css'
 
 type LayoutProps = {
   children: ReactNode
@@ -9,12 +8,12 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <>
+    <div className='flex flex-col'>
       <SideBar />
-      <main className={styles.main}>
+      <main className='flex flex-col relative items-center justify-end ml-4 mt-4 '>
         {children}
       </main>
-    </>
+    </div>
   )
 }
 

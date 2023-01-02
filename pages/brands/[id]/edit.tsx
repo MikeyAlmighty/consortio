@@ -75,6 +75,7 @@ const BrandEdit = ({ data }: BrandPageProps) => {
       register={register}
       handleSubmit={handleSubmit(handleBrandEdit)}
       handleDelete={handleBrandDelete}
+      handleBack={router.back}
       errors={errors}
       isLoading={isLoading}
       isEdit={true}

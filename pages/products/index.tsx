@@ -25,7 +25,7 @@ const ProductPage = ({ data }: ProductPageProps) => {
       <Link href='/products/add'>
         <AddButton />
       </Link>
-      <div className='border border-lime-500 w-8/12 border-2'>
+      <div className='border border-lime-500 mt-4 w-8/12 border-2'>
         <ProductTable handleRowClick={handleProductClick} defaultData={data} />
       </div>
     </>

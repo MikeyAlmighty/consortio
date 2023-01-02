@@ -23,11 +23,11 @@ const BrandPage = ({ data }: BrandPageProps) => {
 
   return (
     <>
+      <ToastContainer />
       <Link href='/brands/add'>
         <AddButton />
       </Link>
-      <ToastContainer />
-      <div className='border border-lime-500 w-8/12 border-2'>
+      <div className='border border-lime-500 mt-4 w-8/12 border-2'>
         <BrandTable handleRowClick={handleBrandClick} defaultData={data} />
       </div>
     </>

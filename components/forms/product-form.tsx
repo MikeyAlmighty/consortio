@@ -1,21 +1,18 @@
 import TextInput from '@components/input/text-input'
-import SelectInput from '@components/input/select-input'
+// import SelectInput from '@components/input/select-input'
 import SubmitButton from '@components/buttons/submit-button'
 import DeleteButton from '@components/buttons/delete-button'
 import BackButton from '@components/buttons/back-button'
-import DateInput from '@components/input/date-input'
 import Loader from '@components/loader'
 
-import { IPR } from '@models/brand'
 import { FormProps } from '@models/form'
 
-const BrandForm = ({
+const ProductForm = ({
   handleSubmit,
   handleDelete,
   handleBack,
   register,
   errors,
-  control,
   isLoading,
   isEdit = false
 }: FormProps) => (
@@ -28,21 +25,9 @@ const BrandForm = ({
         error={errors.name}
       />
       <TextInput
-        label='Country of Origin'
-        register={{ ...register('origin', { required: true }) }}
+        label='Description'
+        register={{ ...register('description', { required: true }) }}
         error={errors.origin}
-      />
-      <SelectInput
-        label='Intellectual Property Rights'
-        register={{ ...register('IPR', { required: true }) }}
-        error={errors.IPR}
-        options={Object.entries(IPR).map(([value, label]) => ({ label, value }))}
-      />
-      <DateInput
-        name='incorporationDate'
-        label='Incorporation Date'
-        control={control}
-        error={errors.incorporationDate}
       />
       <div className='flex flex-col items-center'>
         <div>
@@ -56,4 +41,4 @@ const BrandForm = ({
   </form>
 )
 
-export default BrandForm
+export default ProductForm
