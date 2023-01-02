@@ -1,5 +1,5 @@
 import DatePicker from "react-datepicker";
-import { FieldValues, FieldError, Controller, Control } from 'react-hook-form'
+import { FieldValues, FieldError, Controller, Control, useForm } from 'react-hook-form'
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -25,12 +25,14 @@ const DateInput = <T,>({
             name={name}
             control={control}
             rules={{ required: true }}
-            render={({field}) => (
+            render={({field, formState}) => {
+              return (
               <DatePicker
                 selected={field.value}
                 onChange={field.onChange}
               />
-            )}
+              )
+            }}
           />
         </div>
       </div>
