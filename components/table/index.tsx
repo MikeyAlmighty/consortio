@@ -42,7 +42,7 @@ const Table = <T,>({ columns, defaultData = [], onRowClick }: TableProps<T>) => 
         </thead>
         <tbody>
           {table.getRowModel().rows.map(row => (
-            <tr onClick={() => onRowClick(row.original._id)} className='text-center text-gray-500 hover:bg-red-100 cursor-pointer' key={row.id}>
+            <tr onClick={() => onRowClick(row.original._id)} className='text-center text-gray-500 hover:bg-lime-300 cursor-pointer' key={row.id}>
               {row.getVisibleCells().map(cell => (
                 <td key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}

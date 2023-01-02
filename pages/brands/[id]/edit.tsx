@@ -11,7 +11,7 @@ type BrandPageProps = {
 }
 
 const BrandEdit = ({ data }: BrandPageProps) => {
-  const [isLoading, setIsLoading] = useState<Boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   const router = useRouter()
   const { query } = router
   const { name, origin, IPR, incorporationDate } = data

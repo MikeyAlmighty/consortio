@@ -16,9 +16,14 @@ const ProductTable = ({ defaultData, handleRowClick }: ProductTableProps) => {
   const columns = [
     columnHelper.accessor('name', {
       cell: info => info.getValue(),
-      header: () => <span>Product Name</span>
+      header: () => <span>Name</span>
       // footer: props => props.column.id
-    })
+    }),
+    columnHelper.accessor('description', {
+      cell: info => info.getValue(),
+      header: () => <span>Description</span>
+      // footer: props => props.column.id
+    }),
   ]
   return (
     <Table

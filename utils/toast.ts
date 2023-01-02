@@ -10,6 +10,10 @@ export const toasty = ({ message, isError = false }: ToastProps) => (
     theme: 'dark',
     hideProgressBar: true,
     autoClose: 1500,
-    closeButton: false
+    closeButton: false,
+    style: {
+      color: "#84CC16",
+      backgroundColor: '#f3f4f6'
+    }
   })
 )

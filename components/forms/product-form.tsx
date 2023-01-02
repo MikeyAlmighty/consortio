@@ -18,7 +18,7 @@ const ProductForm = ({
 }: FormProps) => (
   <form onSubmit={handleSubmit}>
     <div className='flex px-96 pt-8 items-center flex-col border border-lime-500 border-2 mt-4 h-10/12'>
-      <p className='text-lime-500 text-xl font-bold'>{!isEdit ? 'Add' : 'Edit'} Brand</p>
+      <p className='text-lime-500 text-xl font-bold'>{!isEdit ? 'Add' : 'Edit'} Product</p>
       <TextInput
         label='Name'
         register={{ ...register('name', { required: true }) }}
