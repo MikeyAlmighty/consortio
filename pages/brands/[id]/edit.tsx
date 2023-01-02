@@ -36,19 +36,19 @@ const BrandEdit = ({ data }: BrandPageProps) => {
     fetch(`http://localhost:8000/${query.id}`, {
       method: 'PATCH',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(data)
     })
       .then(() => {
         setIsLoading(false)
-        toasty({  message: 'Brand updated.' })
+        toasty({ message: 'Brand updated.' })
       })
       .catch((error) => {
-        toasty({ message: "Brand could not be updated, please try again.", isError: true  })
-        console.error('Error:', error);
+        toasty({ message: 'Brand could not be updated, please try again.', isError: true })
+        console.error('Error:', error)
         setIsLoading(false)
-      });
+      })
 
     router.push('/brands')
   }
@@ -57,16 +57,16 @@ const BrandEdit = ({ data }: BrandPageProps) => {
     fetch(`http://localhost:8000/${query.id}`, {
       method: 'DELETE',
       headers: {
-        'Content-Type': 'application/json',
-      },
+        'Content-Type': 'application/json'
+      }
     })
       .then(() => {
-          toasty({  message: 'Brand deleted.' })
+        toasty({ message: 'Brand deleted.' })
       })
       .catch((error) => {
-        toasty({ message: "Brand could not be deleted, please try again.", isError: true  })
-        console.error('Error:', error);
-      });
+        toasty({ message: 'Brand could not be deleted, please try again.', isError: true })
+        console.error('Error:', error)
+      })
     router.push('/brands')
   }
 
@@ -86,7 +86,7 @@ const BrandEdit = ({ data }: BrandPageProps) => {
 export async function getServerSideProps ({ query }) {
   const { id } = query
   const res = await fetch(`http://localhost:8000/${id}`)
-    .then((response) => response.json())
+    .then(async (response) => await response.json())
     .catch((error) => {
       console.error('[Brands index] - Error: ', error)
       // throw new Error('[Brands index] - Error: ', error)

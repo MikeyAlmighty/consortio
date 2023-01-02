@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import BrandForm from '@components/forms/brand-form'
 
@@ -28,26 +28,26 @@ const BrandAdd = () => {
     fetch('http://localhost:8000', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(data)
     })
-      .then((response) => response.json())
+      .then(async (response) => await response.json())
       .then((data) => {
         // TODO: Remove once hosted
         setTimeout(() => {
-          console.log('Success:', data);
+          console.log('Success:', data)
           setIsLoading(false)
-          toasty({  message: 'Brand added.' })
+          toasty({ message: 'Brand added.' })
         }, 1000)
       })
       .catch((error) => {
-        toasty({ message: "Brand could not be added, please try again.", isError: true  })
-        console.error('Error:', error);
+        toasty({ message: 'Brand could not be added, please try again.', isError: true })
+        console.error('Error:', error)
         setIsLoading(false)
-      });
+      })
 
-      router.push('/brands')
+    router.push('/brands')
   }
 
   return (

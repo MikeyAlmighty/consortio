@@ -16,19 +16,19 @@ const InfluencerTable = ({ defaultData, handleRowClick }: InfluencerTableProps) 
   const columns = [
     columnHelper.accessor('firstName', {
       cell: info => info.getValue(),
-      header: () => <span>First Name</span>,
+      header: () => <span>First Name</span>
       // footer: props => props.column.id
     }),
     columnHelper.accessor(({ lastName }) => lastName, {
       id: 'lastName',
       cell: info => info.getValue(),
-      header: () => <span>Last Name</span>,
+      header: () => <span>Last Name</span>
       // footer: props => props.column.id
     }),
     columnHelper.accessor(({ handle }) => handle, {
       id: 'handle',
       cell: info => info.getValue(),
-      header: () => <span>Handle</span>,
+      header: () => <span>Handle</span>
       // footer: props => props.column.id
     })
   ]

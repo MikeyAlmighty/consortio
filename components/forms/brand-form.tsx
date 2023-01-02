@@ -10,7 +10,7 @@ import TextInput from '@components/input/text-input'
 import SelectInput from '@components/input/select-input'
 import SubmitButton from '@components/buttons/submit-button'
 import DeleteButton from '@components/buttons/delete-button'
-import DateInput from '@components/input/date-input';
+import DateInput from '@components/input/date-input'
 import Loader from '@components/loader'
 
 import { IPR } from '@models/brand'
@@ -26,14 +26,14 @@ type BrandFormProps = {
 }
 
 const BrandForm = ({
-    handleSubmit,
-    handleDelete,
-    register,
-    errors,
-    control,
-    isLoading,
-    isEdit = false
-  }: BrandFormProps) => (
+  handleSubmit,
+  handleDelete,
+  register,
+  errors,
+  control,
+  isLoading,
+  isEdit = false
+}: BrandFormProps) => (
   <form onSubmit={handleSubmit}>
     <div className='flex px-96 pt-8 items-center flex-col border border-lime-500 border-2 mt-4 h-10/12'>
       <p className='text-lime-500 text-xl font-bold'>{!isEdit ? 'Add' : 'Edit'} Brand</p>
@@ -51,7 +51,7 @@ const BrandForm = ({
         label='Intellectual Property Rights'
         register={{ ...register('IPR', { required: true }) }}
         error={errors.IPR}
-        options={Object.entries(IPR).map(([value, label]) =>({ label, value }))}
+        options={Object.entries(IPR).map(([value, label]) => ({ label, value }))}
       />
       <DateInput
         name='incorporationDate'
@@ -61,7 +61,7 @@ const BrandForm = ({
       />
       <div className='flex flex-col items-center'>
         <div>
-        <SubmitButton />
+          <SubmitButton />
           {isEdit ? <DeleteButton handleDelete={handleDelete} /> : null}
         </div>
         <Loader isLoading={isLoading} />

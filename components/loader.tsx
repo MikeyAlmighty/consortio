@@ -1,7 +1,7 @@
 import { ThreeCircles } from 'react-loader-spinner'
 
 type LoaderProps = {
-    isLoading: boolean
+  isLoading: boolean
 }
 
 const Loader = ({ isLoading }: LoaderProps) => (

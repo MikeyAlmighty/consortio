@@ -34,9 +34,9 @@ const ProductPage = ({ data }: ProductPageProps) => {
 
 export async function getServerSideProps () {
   const res = await fetch('http://localhost:8000/products')
-    .then((response) => response.json())
+    .then(async (response) => await response.json())
     .catch((error) => {
-      console.error('Error:', error);
+      console.error('Error:', error)
     })
   return { props: { data: res } }
 }

@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify'
 
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css'
 
 import BrandTable from '@components/table/brand-table'
 import AddButton from '@components/buttons/add-button'
@@ -36,7 +36,7 @@ const BrandPage = ({ data }: BrandPageProps) => {
 
 export async function getServerSideProps () {
   const res = await fetch('http://localhost:8000')
-    .then((response) => response.json())
+    .then(async (response) => await response.json())
     .catch((error) => {
       console.error('[Brands index] - Error: ', error)
       // throw new Error('[Brands index] - Error: ', error)
