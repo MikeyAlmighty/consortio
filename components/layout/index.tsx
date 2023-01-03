@@ -8,9 +8,9 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className='flex flex-col'>
+    <div>
       <SideBar />
-      <main className='flex flex-col relative items-center justify-end ml-4 mt-4 '>
+      <main className='ml-96 absolute w-8/12 flex flex-col items-center justify-end mt-4 '>
         {children}
       </main>
     </div>
