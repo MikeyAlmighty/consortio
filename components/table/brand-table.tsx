@@ -17,31 +17,30 @@ const BrandTable = ({ defaultData, handleRowClick }: BrandTableProps) => {
 
   useEffect(() => {
     const newColumns = [
-     columnHelper.accessor('name', {
-       cell: info => info.getValue(),
-       header: () => <span>Company</span>
-       // footer: props => props.column.id
-     }),
-    columnHelper.accessor(({ origin }) => origin, {
-      id: 'origin',
-      cell: info => info.getValue(),
-      header: () => <span>Origin</span>
+      columnHelper.accessor('name', {
+        cell: info => info.getValue(),
+        header: () => <span>Company</span>
+        // footer: props => props.column.id
+      }),
+      columnHelper.accessor(({ origin }) => origin, {
+        id: 'origin',
+        cell: info => info.getValue(),
+        header: () => <span>Origin</span>
       // footer: props => props.column.id
-    }),
-    columnHelper.accessor(({ incorporationDate }) => incorporationDate, {
-      id: 'incorporationDate',
+      }),
+      columnHelper.accessor(({ incorporationDate }) => incorporationDate, {
+        id: 'incorporationDate',
 
-      cell: info => {
-        const formattedDate = new Date(info.getValue())
-        return formattedDate.toLocaleDateString()
-      },
-      header: () => <span>Date of Incorporation</span>
+        cell: info => {
+          const formattedDate = new Date(info.getValue())
+          return formattedDate.toLocaleDateString()
+        },
+        header: () => <span>Date of Incorporation</span>
       // footer: props => props.column.id
-    })
-   ]
-   setColumns(newColumns)
+      })
+    ]
+    setColumns(newColumns)
   }, [])
-
 
   return (
     <Table

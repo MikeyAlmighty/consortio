@@ -42,7 +42,7 @@ const ProductAdd = () => {
 
   const router = useRouter()
 
-    return(
+  return (
     <ProductForm
       register={register}
       handleSubmit={handleSubmit(handleProductAdd)}
@@ -50,7 +50,7 @@ const ProductAdd = () => {
       errors={errors}
       isLoading={isLoading}
     />
-    )
+  )
 }
 
 export default ProductAdd

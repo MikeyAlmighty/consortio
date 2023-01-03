@@ -23,7 +23,7 @@ const ProductTable = ({ defaultData, handleRowClick }: ProductTableProps) => {
       cell: info => info.getValue(),
       header: () => <span>Description</span>
       // footer: props => props.column.id
-    }),
+    })
   ]
   return (
     <Table
