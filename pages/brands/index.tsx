@@ -26,7 +26,7 @@ const BrandPage = ({ data }: BrandPageProps) => {
       <div className='border my-4 w-11/12 border-2'>
         <BrandTable handleRowClick={handleBrandClick} defaultData={data} />
       </div>
-      <Link  href='/brands/add'>
+      <Link href='/brands/add'>
         <AddButton />
       </Link>
     </>

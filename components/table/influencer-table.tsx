@@ -25,7 +25,7 @@ const InfluencerTable = ({ defaultData, handleRowClick }: InfluencerTableProps) 
       header: () => <span>Last Name</span>
       // footer: props => props.column.id
     }),
-    columnHelper.accessor(({ socialDetails:{ email }  }) => email, {
+    columnHelper.accessor(({ socialDetails: { email } }) => email, {
       id: 'email',
       cell: info => info.getValue(),
       header: () => <span>Email</span>

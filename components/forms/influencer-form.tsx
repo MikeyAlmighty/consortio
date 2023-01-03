@@ -55,22 +55,24 @@ const InfluencerForm = ({
         register={{ ...register('socialDetails.tiktok') }}
         error={errors.socialDetails?.tiktok}
       />
-      {isEdit ? (
-        <>
-          <TextInput
-            isDisabled={true}
-            label='Posts'
-            register={{ ...register('posts') }}
-            error={errors.posts}
-          />
-          <TextInput
-            isDisabled={true}
-            label='Clicks'
-            register={{ ...register('clicks') }}
-            error={errors.clicks}
-          />
-        </>
-      ): null
+      {isEdit
+        ? (
+          <>
+            <TextInput
+              isDisabled={true}
+              label='Posts'
+              register={{ ...register('posts') }}
+              error={errors.posts}
+            />
+            <TextInput
+              isDisabled={true}
+              label='Clicks'
+              register={{ ...register('clicks') }}
+              error={errors.clicks}
+            />
+          </>
+        )
+        : null
       }
       <div className='flex flex-col items-center'>
         <div>
