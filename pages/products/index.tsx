@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-/* import { useEffect, useState } from 'react' */
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import ProductTable from '@components/table/product-table'
 import AddButton from '@components/buttons/add-button'
@@ -22,6 +23,7 @@ const ProductPage = ({ data }: ProductPageProps) => {
 
   return (
     <>
+      <ToastContainer />
       <Link href='/products/add'>
         <AddButton />
       </Link>

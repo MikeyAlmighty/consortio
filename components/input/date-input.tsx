@@ -18,9 +18,9 @@ const DateInput = <T,>({
 }: DateInputProps<T>) => {
   return (
     <div className='mt-2'>
-      {error?.type === 'required' ? <p className='text-xs text-red-900'>Required</p> : null}
+      {error?.type === 'required' ? <p className='text-xs text-red-900'>* Required</p> : null}
       <p className='text-sm text-gray-500'>{label}</p>
-      <div className='border-2 rounded border-lime-500'>
+      <div className='border-2 rounded border-lime-500 p-3'>
         <Controller
           name={name}
           control={control}

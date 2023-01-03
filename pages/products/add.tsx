@@ -40,8 +40,6 @@ const ProductAdd = () => {
     router.push('/products')
   }
 
-
-
   const router = useRouter()
 
     return(

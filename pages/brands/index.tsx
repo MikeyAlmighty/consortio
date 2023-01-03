@@ -1,12 +1,10 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { ToastContainer, toast } from 'react-toastify'
-
+import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 import BrandTable from '@components/table/brand-table'
 import AddButton from '@components/buttons/add-button'
-import { toasty } from '@utils/toast'
 
 import { Brand } from '@models/brand'
 

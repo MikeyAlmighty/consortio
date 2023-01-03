@@ -1,5 +1,5 @@
 import TextInput from '@components/input/text-input'
-// import SelectInput from '@components/input/select-input'
+import DescriptionInput from '@components/input/description-input'
 import SubmitButton from '@components/buttons/submit-button'
 import DeleteButton from '@components/buttons/delete-button'
 import BackButton from '@components/buttons/back-button'
@@ -24,7 +24,7 @@ const ProductForm = ({
         register={{ ...register('name', { required: true }) }}
         error={errors.name}
       />
-      <TextInput
+      <DescriptionInput
         label='Description'
         register={{ ...register('description', { required: true }) }}
         error={errors.origin}
