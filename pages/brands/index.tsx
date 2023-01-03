@@ -21,8 +21,8 @@ const BrandPage = ({ data }: BrandPageProps) => {
 
   return (
     <>
-      <ToastContainer />
       <p className='text-gray-500 text-2xl font-bold'>Brands</p>
+      <ToastContainer />
       <div className='border my-4 w-11/12 border-2'>
         <BrandTable handleRowClick={handleBrandClick} defaultData={data} />
       </div>

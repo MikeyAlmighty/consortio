@@ -13,7 +13,6 @@ type TableProps <T> = {
 }
 
 const Table = <T,>({ columns, defaultData = [], onRowClick }: TableProps<T>) => {
-  /* const [data, setData] = useState(() => [...defaultData]) */
 
   const table = useReactTable({
     data: defaultData,
@@ -42,7 +41,7 @@ const Table = <T,>({ columns, defaultData = [], onRowClick }: TableProps<T>) => 
         </thead>
         <tbody>
           {table.getRowModel().rows.map(row => (
-            <tr onClick={() => onRowClick(row.original._id)} className='text-center text-gray-500 hover:bg-lime-200 cursor-pointer text-lg' key={row.id}>
+            <tr onClick={() => onRowClick(row.original._id)} className='text-center text-gray-500 hover:bg-lime-200 cursor-pointer text-lg border' key={row.id}>
               {row.getVisibleCells().map(cell => (
                 <td key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}

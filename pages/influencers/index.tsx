@@ -21,8 +21,8 @@ const InfluencerPage = ({ data }: InfluencerPageProps) => {
 
   return (
     <>
-      <ToastContainer />
       <p className='text-gray-500 text-2xl font-bold'>Influencers</p>
+      <ToastContainer />
       <div className='border my-4 w-11/12 border-2'>
         <InfluencerTable handleRowClick={handleInfluencerClick} defaultData={data} />
       </div>

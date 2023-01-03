@@ -21,8 +21,8 @@ const ProductPage = ({ data }: ProductPageProps) => {
 
   return (
     <>
-      <ToastContainer />
       <p className='text-gray-500 text-2xl font-bold'>Products</p>
+      <ToastContainer />
       <div className='border my-4 w-11/12 border-2'>
         <ProductTable handleRowClick={handleProductClick} defaultData={data} />
       </div>
