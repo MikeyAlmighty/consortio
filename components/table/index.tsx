@@ -24,7 +24,7 @@ const Table = <T,>({ columns, defaultData = [], onRowClick }: TableProps<T>) => 
   return (
     <div>
       <table className='w-full bg-gray-100'>
-        <thead className='text-gray-500 font-bold'>
+        <thead className='text-gray-500 font-bold text-xl'>
           {table.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map(header => (
@@ -42,7 +42,7 @@ const Table = <T,>({ columns, defaultData = [], onRowClick }: TableProps<T>) => 
         </thead>
         <tbody>
           {table.getRowModel().rows.map(row => (
-            <tr onClick={() => onRowClick(row.original._id)} className='text-center text-gray-500 hover:bg-lime-300 cursor-pointer' key={row.id}>
+            <tr onClick={() => onRowClick(row.original._id)} className='text-center text-gray-500 hover:bg-lime-200 cursor-pointer text-lg' key={row.id}>
               {row.getVisibleCells().map(cell => (
                 <td key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}

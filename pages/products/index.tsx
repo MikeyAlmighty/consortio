@@ -23,7 +23,7 @@ const ProductPage = ({ data }: ProductPageProps) => {
     <>
       <ToastContainer />
       <p className='text-gray-500 text-2xl font-bold'>Products</p>
-      <div className='border border-lime-500 my-4 w-8/12 border-2'>
+      <div className='border my-4 w-11/12 border-2'>
         <ProductTable handleRowClick={handleProductClick} defaultData={data} />
       </div>
       <Link href='/products/add'>

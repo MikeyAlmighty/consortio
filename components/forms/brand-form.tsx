@@ -46,8 +46,8 @@ const BrandForm = ({
       />
       <div className='flex flex-col items-center'>
         <div>
-          <SubmitButton />
           {isEdit ? <DeleteButton handleDelete={handleDelete} /> : null}
+          <SubmitButton />
         </div>
         <BackButton handleBack={handleBack} />
         <Loader isLoading={isLoading} />

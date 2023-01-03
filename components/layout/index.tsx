@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import SideBar from '@components/side-bar/index'
+import NavBar from '@components/nav-bar/index'
 
 type LayoutProps = {
   children: ReactNode
@@ -8,12 +8,12 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div>
-      <SideBar />
-      <main className='ml-96 absolute w-8/12 flex flex-col items-center justify-end mt-4 '>
+    <>
+      <NavBar />
+      <main className='w-full flex flex-col items-center mt-4 '>
         {children}
       </main>
-    </div>
+    </>
   )
 }
 

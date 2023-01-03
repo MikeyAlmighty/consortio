@@ -4,7 +4,7 @@ type DeleteButtonProps = {
 
 const DeleteButton = ({ handleDelete }: DeleteButtonProps) => (
   <input
-    className='border text-gray-700 border-lime-300 rounded bg-gray-100 m-4 cursor-pointer hover:bg-gray-400 w-48'
+    className='border text-gray-300 border-gray-300 rounded bg-red-500 m-4 p-4 cursor-pointer hover:bg-red-300 w-48'
     type='button'
     value='Delete'
     onClick={handleDelete}

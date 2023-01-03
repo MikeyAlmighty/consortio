@@ -17,7 +17,7 @@ const InfluencerForm = ({
   isEdit = false
 }: FormProps) => (
   <form onSubmit={handleSubmit}>
-    <div className='flex px-96 pt-8 items-center flex-col border border-lime-500 border-2 mt-4 h-10/12'>
+    <div className='flex w-full px-96 pt-8 items-center flex-col border border-lime-500 border-2 mt-4 h-10/12'>
       <p className='text-lime-500 text-xl font-bold'>{!isEdit ? 'Add' : 'Edit'} Influencer</p>
       <TextInput
         label='First name'
@@ -74,8 +74,8 @@ const InfluencerForm = ({
       }
       <div className='flex flex-col items-center'>
         <div>
-          <SubmitButton />
           {isEdit ? <DeleteButton handleDelete={handleDelete} /> : null}
+          <SubmitButton />
         </div>
         <BackButton handleBack={handleBack} />
         <Loader isLoading={isLoading} />
