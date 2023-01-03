@@ -2,10 +2,10 @@
 export interface Influencer {
   firstName: string
   lastName: string
-  handle: string
   posts: number
   clicks: number
   socialDetails: {
+    handle: string
     email: string
     instagram?: string
     tiktok?: string

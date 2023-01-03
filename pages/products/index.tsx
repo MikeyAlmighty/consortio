@@ -13,8 +13,6 @@ type ProductPageProps = {
 }
 
 const ProductPage = ({ data }: ProductPageProps) => {
-  /* const [productData, setProductData] = useState([]) */
-
   const router = useRouter()
 
   const handleProductClick = (id: string) => {

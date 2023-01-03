@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-/* import { useEffect, useState } from 'react' */
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import InfluencerTable from '@components/table/influencer-table'
 import AddButton from '@components/buttons/add-button'
@@ -12,8 +13,6 @@ type InfluencerPageProps = {
 }
 
 const InfluencerPage = ({ data }: InfluencerPageProps) => {
-  /* const [influencerData, setInfluencerData] = useState([]) */
-
   const router = useRouter()
 
   const handleInfluencerClick = (id: string) => {
@@ -22,10 +21,11 @@ const InfluencerPage = ({ data }: InfluencerPageProps) => {
 
   return (
     <>
+      <ToastContainer />
       <Link href='/influencers/add'>
         <AddButton />
       </Link>
-      <div className='border border-lime-500 w-8/12 border-2'>
+      <div className='border mt-4 border-lime-500 w-8/12 border-2'>
         <InfluencerTable handleRowClick={handleInfluencerClick} defaultData={data} />
       </div>
     </>

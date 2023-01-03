@@ -12,7 +12,7 @@ export const toasty = ({ message, isError = false }: ToastProps) => (
     autoClose: 1500,
     closeButton: false,
     style: {
-      color: "#84CC16",
+      color: "#6b7280",
       backgroundColor: '#f3f4f6'
     }
   })
