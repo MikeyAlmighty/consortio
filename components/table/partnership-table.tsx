@@ -34,7 +34,7 @@ const PartnershipTable = ({ defaultData, handleRowClick }: PartnershipTableProps
       columnHelper.accessor(({ isActive }) => isActive, {
         id: 'isActive',
         cell: info => {
-          info.getValue() ? 'Active' : 'Terminated'
+          return info.getValue() ? 'Active' : 'Terminated'
         },
         header: () => <span>Status</span>
       // footer: props => props.column.id

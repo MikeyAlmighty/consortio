@@ -1,9 +1,9 @@
 import TextInput from '@components/input/text-input'
 import SelectInput from '@components/input/select-input'
+import DateInput from '@components/input/date-input'
 import SubmitButton from '@components/buttons/submit-button'
 import DeleteButton from '@components/buttons/delete-button'
 import BackButton from '@components/buttons/back-button'
-import DateInput from '@components/input/date-input'
 import Loader from '@components/loader'
 
 import { IPR } from '@models/brand'
@@ -20,7 +20,7 @@ const BrandForm = ({
   isEdit = false
 }: FormProps) => (
   <form onSubmit={handleSubmit}>
-    <div className='flex px-96 pt-8 items-center flex-col border border-lime-500 border-2 mt-4 h-10/12'>
+    <div className='flex px-96 pt-8 items-center flex-col border border-lime-500 border-2 mt-4 h-10/12 bg-gray-100'>
       <p className='text-lime-500 text-xl font-bold'>{!isEdit ? 'Add' : 'Edit'} Brand</p>
       <TextInput
         label='Name'

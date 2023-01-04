@@ -14,7 +14,7 @@ const ProductEdit = ({ data }: ProductPageProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const router = useRouter()
   const { query } = router
-  const { name, description } = data
+  const { name, description, brandId, brandName } = data
 
   const {
     register,
@@ -26,6 +26,7 @@ const ProductEdit = ({ data }: ProductPageProps) => {
   useEffect(() => {
     setValue('name', name)
     setValue('description', description)
+    setValue('brandName', brandName)
   }, [])
 
   const handleProductEdit: SubmitHandler<Product> = data => {
@@ -80,15 +81,31 @@ const ProductEdit = ({ data }: ProductPageProps) => {
   )
 }
 
-export async function getServerSideProps ({ query }) {
+type ServerSideProps = {
+  query: { id: string }
+}
+
+export async function getServerSideProps ({ query }: ServerSideProps) {
   const { id } = query
-  const res = await fetch(`http://localhost:8000/products/${id}`)
+  const productResult = await fetch(`http://localhost:8000/products/${id}`)
     .then(async (response) => await response.json())
     .catch((error) => {
       console.error('[Products index] - Error: ', error)
       // throw new Error('[Products index] - Error: ', error)
     })
-  return { props: { data: res } }
+
+  const { brandId } = productResult
+  const brandResult = await fetch(`http://localhost:8000/${brandId}`)
+    .then(async (response) => await response.json())
+    .catch((error) => {
+      console.error('[Products index] - Error: ', error)
+      // throw new Error('[Products index] - Error: ', error)
+    })
+
+  const { name: brandName } = brandResult // TODO: temporary hack until inter-service communication issue is researched/resolved
+
+  const data = { ...productResult, brandName }
+  return { props: { data } }
 }
 
 export default ProductEdit

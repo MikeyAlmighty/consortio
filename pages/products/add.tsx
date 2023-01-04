@@ -6,7 +6,11 @@ import ProductForm from '@components/forms/product-form'
 import { toasty } from '@utils/toast'
 import { Product } from '@models/product'
 
-const ProductAdd = () => {
+type ProductAddProps = {
+  brandOptions: { value: string, label: string }[]
+}
+
+const ProductAdd = ({ brandOptions }: ProductAddProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const {
     register,
@@ -44,6 +48,7 @@ const ProductAdd = () => {
 
   return (
     <ProductForm
+      brandOptions={brandOptions}
       register={register}
       handleSubmit={handleSubmit(handleProductAdd)}
       handleBack={router.back}
@@ -51,6 +56,16 @@ const ProductAdd = () => {
       isLoading={isLoading}
     />
   )
+}
+
+export async function getServerSideProps () {
+  const brandsResult = await fetch('http://localhost:8000')
+    .then(async (response) => await response.json())
+    .then((data) => data.map(({ _id, name} ) => ({ label: name, value: _id })))
+    .catch((error) => {
+      console.error('Error:', error)
+    })
+  return { props: { brandOptions: brandsResult } }
 }
 
 export default ProductAdd

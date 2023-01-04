@@ -2,9 +2,9 @@ export type Partnership = {
   id?: String
   description: String
   brandId: String
-  influencerId: String
-  productIds: String[] // multiple product(Id)s
+  influencerId: string
+  productId: String
   partnershipDate: Date
-  terminationdate?: Date
+  terminationDate?: Date
   isActive: boolean
 }

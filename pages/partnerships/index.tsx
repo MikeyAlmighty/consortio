@@ -16,7 +16,7 @@ const PartnershipPage = ({ data }: PartnershipPageProps) => {
   const router = useRouter()
 
   const handlePartnershipClick = (id: string) => {
-    router.push(`/brands/${id}/edit`)
+    router.push(`/partnerships/${id}/view`)
   }
 
   return (
@@ -34,7 +34,7 @@ const PartnershipPage = ({ data }: PartnershipPageProps) => {
 }
 
 export async function getServerSideProps () {
-  const res = await fetch('http://localhost:8000')
+  const res = await fetch('http://localhost:8000/partnerships')
     .then(async (response) => await response.json())
     .catch((error) => {
       console.error('[Partnerships index] - Error: ', error)
